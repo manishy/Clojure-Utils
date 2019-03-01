@@ -20,3 +20,13 @@
         )
     ))
 
+
+; my-filter ------------------------
+
+(defn my-filter [f coll]
+  (loop [c coll final []]
+    (if (empty? c) final
+        (if (f (first c))
+          (recur (rest c) (conj final (first c)))
+          (recur (rest c) final)))))
+

@@ -19,10 +19,17 @@
     ))
 
 
-
 (deftest My-Map-Test
   (testing "My-Map"
     (is(= (my-map even? [1 2 3]) [false true false]))
     (is(= (my-map inc [1 2 3 4 5]) [2 3 4 5 6]))
     (is(= (my-map dec [1 2]) [0 1]))
+    ))
+
+
+(deftest My-Filter-Test
+  (testing "My-Filter"
+    (is (= (my-filter even? [1 2 3]) [2]))
+    (is (= (my-filter odd? [1 2 3 4 5]) [1 3 5]))
+    (is (= (my-filter odd? []) []))
     ))
